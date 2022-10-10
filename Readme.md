@@ -26,4 +26,4 @@ CUDA_VISIBLE_DEVICES=0 python main.py --block_type shadow --af False --pruning_r
 CUDA_VISIBLE_DEVICES=0 python main.py --block_type shadow --af True --pruning_rate =0.6
 ```
 ### Results
-![输入图片描述](Readme_md_files/79cefdc0-1950-11ed-a285-d1ceb57c1d9c.jpeg?v=1&type=image)![输入图片描述](Readme_md_files/80c92f60-1950-11ed-a285-d1ceb57c1d9c.jpeg?v=1&type=image)![输入图片描述](Readme_md_files/965e8b90-1950-11ed-a285-d1ceb57c1d9c.jpeg?v=1&type=image)
+![输入图片描述](https://github.com/zhangxin-xd/REAF/blob/main/figs/CA.png)![输入图片描述](https://github.com/zhangxin-xd/REAF/blob/main/figs/cifar-10.png)![输入图片描述](https://github.com/zhangxin-xd/REAF/blob/main/figs/Imagenet.png)
