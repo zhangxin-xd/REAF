@@ -7,7 +7,6 @@
 
 ### Prerequisites
 - Python 3.8
-- GPU Memory >= 11G
 - Pytorch 1.10.0
 
 ### Getting started
