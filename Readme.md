@@ -1,10 +1,20 @@
 
 # **REAF: Remembering Enhancement and Entropy-based Asymptotic Forgetting for Filter Pruning**
 ⭐This is a [pytorch](http://pytorch.org/) implementation of REAF.
-The code is not complete, we will update it as soon as possible.
 
 ⭐This paper has been accepted by IEEE TIP.
 > ![引用内容](https://github.com/zhangxin-xd/REAF/blob/main/figs/framework.png)
+```
+@ARTICLE{10181132,
+  author={Zhang, Xin and Xie, Weiying and Li, Yunsong and Jiang, Kai and Fang, Leyuan},
+  journal={IEEE Transactions on Image Processing}, 
+  title={REAF: Remembering Enhancement and Entropy-Based Asymptotic Forgetting for Filter Pruning}, 
+  year={2023},
+  volume={32},
+  number={},
+  pages={3912-3923},
+  doi={10.1109/TIP.2023.3288986}}
+```
 
 ### Prerequisites
 - Python 3.8
