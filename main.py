@@ -51,7 +51,7 @@ parser.add_argument('--manualSeed', type=int, help='manual seed')
 
 parser.add_argument('--arch', type=str, default='src56', help='Choose from ')
 parser.add_argument('--block_type', type=str, default='shadow', help='Reparameterized or not, shadow is yes, normal is no')
-parser.add_argument('--af', type=bool, default=True)
+
 parser.add_argument('--pruning_rate', type=float, default=0.6, help='remaining rate')
 parser.add_argument('--layer_begin', type=int, default=0, help='Start layer')
 parser.add_argument('--layer_end', type=int, default=0, help='End layer')
