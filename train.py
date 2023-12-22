@@ -35,7 +35,7 @@ def train_one_epoch(model, criterion, optimizer, scheduler, train_loader, epoch,
             top5.update(prec5.item(), n)
             loss.backward(retain_graph=True)
            
-            m_mask.do_grad_mask()
+            # m_mask.do_grad_mask()
             optimizer.step()
             optimizer.zero_grad()
            
