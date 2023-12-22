@@ -30,12 +30,12 @@
 
 ### Remembering Enhancement
 ```
-CUDA_VISIBLE_DEVICES=0 python main.py --block_type shadow --af False --pruning_rate =1.0
+CUDA_VISIBLE_DEVICES=0 python main.py --block_type shadow --pruning_rate =1.0
 ```
 
 ### Entropy-based Asymptotic Forgetting
 ```
-CUDA_VISIBLE_DEVICES=0 python main.py --block_type shadow --af True --pruning_rate =0.6
+CUDA_VISIBLE_DEVICES=0 python main.py --block_type shadow --pruning_rate =0.6
 ```
 ### Results
 ![输入图片描述](https://github.com/zhangxin-xd/REAF/blob/main/figs/result1.png)![输入图片描述](https://github.com/zhangxin-xd/REAF/blob/main/figs/result2.png)![输入图片描述](https://github.com/zhangxin-xd/REAF/blob/main/figs/result3.png)
