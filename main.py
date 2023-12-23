@@ -19,15 +19,16 @@ from utils import print_log
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--data_path', type=str, default='', help='Path to dataset')
-parser.add_argument('--weight_path', type=str, default='', help='Path to weight')
+parser.add_argument('--data_path', type=str, default='/home/st2/Model_Compression/', help='Path to dataset')
+parser.add_argument('--weight_path', type=str, default='./checkpoint', help='Path to weight')
+parser.add_argument('--pretrain', type=str, default='', help='pretrain model')
+
 parser.add_argument('--dataset', type=str, default='cifar10', help='Choose from cifar10 and cifar 100')
 parser.add_argument('--epoch', type=int, default=300, help='Epoch')
 parser.add_argument('--epoch_val', type=int, default=60, help='Epoch for val')
 parser.add_argument('--epoch_pruning', type=int, default=1, help='Epoch for val')
 parser.add_argument('--epoch_save', type=int, default=100, help='Epoch for save')
 parser.add_argument('--batch_size', type=int, default=256, help='Batchsize')
-parser.add_argument('--resume', type=str, default='', help='pretrain model')
 parser.add_argument('--base_lr', type=float, default=0.01, help='Learning_rate') 
 parser.add_argument('--gammas', type=list, default=[0.1, 0.1], help='Learning_rate') 
 parser.add_argument('--scheduler', type=list, default=[150, 225], help='Learning_rate') 
@@ -112,7 +113,6 @@ if __name__ == '__main__':
     if args.arch == 'src56':
         weight_decay = 5e-4
         #   ------------------------------------
-        #   94.47  --->  95+
         #batch_size = 128
         warmup_epochs = 0
         gamma_init = 0.5
@@ -122,7 +122,6 @@ if __name__ == '__main__':
     if args.arch == 'src110':
         weight_decay = 5e-4
         #   ------------------------------------
-        #   94.47  --->  95+
         #batch_size = 128
         warmup_epochs = 0
         gamma_init = 0.5
@@ -141,8 +140,8 @@ if __name__ == '__main__':
     print(model)
     #model = torch.nn.DataParallel(model, device_ids= list(args.gpus))
     model = model.cuda()
-    if args.resume is not None:
-        checkpoint = torch.load(args.resume)
+    if args.pretrain is not None:
+        checkpoint = torch.load(args.pretrain)
         model.load_state_dict(checkpoint['state_dict'])
     ##Init criterion, optimizer, scheduler
     criterion = torch.nn.CrossEntropyLoss()
@@ -179,9 +178,4 @@ if __name__ == '__main__':
 
 
     train_main(model=model, criterion = criterion, optimizer = optimizer, train_loader = train_loader, 
-                    test_loader=test_loader, args = args, log = log, m_mask = m) #
-        # val(model = model, criterion = criterion, test_loader = test_loader, epoch = 0, args = args)
-    ################################################################################
-    
-       
-
+                    test_loader=test_loader, args = args, log = log, m_mask = m) 
