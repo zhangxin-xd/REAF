@@ -104,7 +104,7 @@ class Mask:
 
             print('filter_pruned_index', filter_pruned_index)
             print('filter_maintain_index', filter_maintain_index)
-            print('different with fpgm?', index_test != filter_maintain_index)
+           
 
             kernel_length = weight_torch[0][2].size()[1] * weight_torch[0][2].size()[2] * weight_torch[0][2].size()[3]
             for x in range(0, len(filter_pruned_index)):
