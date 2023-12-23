@@ -30,12 +30,12 @@
 
 ### Remembering Enhancement
 ```
-CUDA_VISIBLE_DEVICES=0 python main.py --block_type shadow --pruning_rate =1.0
+CUDA_VISIBLE_DEVICES=0 python main.py --block_type shadow --pruning_rate =1.0 --weight_path ./checkpoint_pretrain
 ```
 
 ### Entropy-based Asymptotic Forgetting
 ```
-CUDA_VISIBLE_DEVICES=0 python main.py --block_type shadow --pruning_rate =0.6
+CUDA_VISIBLE_DEVICES=0 python main.py --block_type shadow --pruning_rate =0.6  --weight_path ./checkpoint --pretrain ./checkpoint_pretraint/model_best.pth.tar
 ```
 ### Results
 ![输入图片描述](https://github.com/zhangxin-xd/REAF/blob/main/figs/result1.png)![输入图片描述](https://github.com/zhangxin-xd/REAF/blob/main/figs/result2.png)![输入图片描述](https://github.com/zhangxin-xd/REAF/blob/main/figs/result3.png)
