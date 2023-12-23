@@ -15,7 +15,7 @@
   pages={3912-3923},
   doi={10.1109/TIP.2023.3288986}}
 ```
-This code is based on [ACNet](https://github.com/DingXiaoH/ACNet) and FPGM (https://github.com/he-y/filter-pruning-geometric-median).
+This code is based on [ACNet](https://github.com/DingXiaoH/ACNet) and [FPGM] (https://github.com/he-y/filter-pruning-geometric-median).
 ### Prerequisites
 - Python 3.8
 - Pytorch 1.10.0
