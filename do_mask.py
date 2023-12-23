@@ -105,7 +105,6 @@ class Mask:
             print('filter_pruned_index', filter_pruned_index)
             print('filter_maintain_index', filter_maintain_index)
            
-
             kernel_length = weight_torch[0][2].size()[1] * weight_torch[0][2].size()[2] * weight_torch[0][2].size()[3]
             for x in range(0, len(filter_pruned_index)):
                 codebook[
@@ -195,7 +194,9 @@ class Mask:
                 if args.pruning_rate == 0.3:
                     lam = 0.5641        
                 if args.pruning_rate == 0.7:
-                    lam = 0.24175     
+                    lam = 0.24175   
+                if args.pruning_rate == 1:
+                    lam = 0 
                 rate = 1- lam*epoch**0.05 #0.403 for 0.5  0.322 for 0.6 0.484 for 0.4
             else:
                 rate = args.pruning_rate
