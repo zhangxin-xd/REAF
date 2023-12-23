@@ -19,9 +19,9 @@ from utils import print_log
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--data_path', type=str, default='/home/st2/Model_Compression/', help='Path to dataset')
+parser.add_argument('--data_path', type=str, default='', help='Path to dataset')
 parser.add_argument('--weight_path', type=str, default='./checkpoint', help='Path to weight')
-parser.add_argument('--pretrain', type=str, default='', help='pretrain model')
+parser.add_argument('--pretrain', type=str, default=None, help='pretrain model')
 
 parser.add_argument('--dataset', type=str, default='cifar10', help='Choose from cifar10 and cifar 100')
 parser.add_argument('--epoch', type=int, default=300, help='Epoch')
@@ -53,7 +53,7 @@ parser.add_argument('--manualSeed', type=int, help='manual seed')
 parser.add_argument('--arch', type=str, default='src56', help='Choose from ')
 parser.add_argument('--block_type', type=str, default='shadow', help='Reparameterized or not, shadow is yes, normal is no')
 
-parser.add_argument('--pruning_rate', type=float, default=0.6, help='remaining rate')
+parser.add_argument('--pruning_rate', type=float, default=1, help='remaining rate')
 parser.add_argument('--layer_begin', type=int, default=0, help='Start layer')
 parser.add_argument('--layer_end', type=int, default=0, help='End layer')
 parser.add_argument('--layer_inter', type=int, default=3, help='Interval Layer')
